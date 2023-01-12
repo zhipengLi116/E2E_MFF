@@ -1,0 +1,18 @@
+python run_caption_VidSwinBert.py
+        --config src/configs/VidSwinBert/msvd_8frm_default.json
+        --per_gpu_train_batch_size 4
+        --per_gpu_eval_batch_size 4
+        --num_train_epochs 15
+        --learning_rate 0.0003
+        --max_num_frames 8
+        --pretrained_2d 0
+        --backbone_coef_lr 0.05
+        --mask_prob 0.5
+        --max_masked_token 45
+        --zero_opt_stage 1
+        --mixed_precision_method deepspeed
+        --deepspeed_fp16
+        --gradient_accumulation_steps 1
+        --learn_mask_enabled
+        --loss_sparse_w 0.5
+        --output_dir ./output
